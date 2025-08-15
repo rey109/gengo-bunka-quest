@@ -14,7 +14,225 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      admin_users: {
+        Row: {
+          created_at: string
+          id: string
+          password_hash: string
+          username: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          password_hash: string
+          username: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          password_hash?: string
+          username?: string
+        }
+        Relationships: []
+      }
+      answers: {
+        Row: {
+          answer: string | null
+          created_at: string
+          id: string
+          is_correct: boolean | null
+          question_id: string
+          student_id: string
+        }
+        Insert: {
+          answer?: string | null
+          created_at?: string
+          id?: string
+          is_correct?: boolean | null
+          question_id: string
+          student_id: string
+        }
+        Update: {
+          answer?: string | null
+          created_at?: string
+          id?: string
+          is_correct?: boolean | null
+          question_id?: string
+          student_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "answers_question_id_fkey"
+            columns: ["question_id"]
+            isOneToOne: false
+            referencedRelation: "questions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "answers_student_id_fkey"
+            columns: ["student_id"]
+            isOneToOne: false
+            referencedRelation: "students"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      exams: {
+        Row: {
+          category: string
+          created_at: string
+          duration: number
+          end_time: string | null
+          id: string
+          is_active: boolean
+          start_time: string | null
+          updated_at: string
+        }
+        Insert: {
+          category: string
+          created_at?: string
+          duration?: number
+          end_time?: string | null
+          id?: string
+          is_active?: boolean
+          start_time?: string | null
+          updated_at?: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          duration?: number
+          end_time?: string | null
+          id?: string
+          is_active?: boolean
+          start_time?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      questions: {
+        Row: {
+          category: string
+          correct_option: string
+          created_at: string
+          id: string
+          option_a: string
+          option_b: string
+          option_c: string
+          option_d: string
+          question_text: string
+          updated_at: string
+        }
+        Insert: {
+          category: string
+          correct_option: string
+          created_at?: string
+          id?: string
+          option_a: string
+          option_b: string
+          option_c: string
+          option_d: string
+          question_text: string
+          updated_at?: string
+        }
+        Update: {
+          category?: string
+          correct_option?: string
+          created_at?: string
+          id?: string
+          option_a?: string
+          option_b?: string
+          option_c?: string
+          option_d?: string
+          question_text?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      scores: {
+        Row: {
+          created_at: string
+          exam_id: string
+          id: string
+          is_published: boolean
+          percentage: number
+          score: number
+          student_id: string
+          total_questions: number
+        }
+        Insert: {
+          created_at?: string
+          exam_id: string
+          id?: string
+          is_published?: boolean
+          percentage?: number
+          score?: number
+          student_id: string
+          total_questions?: number
+        }
+        Update: {
+          created_at?: string
+          exam_id?: string
+          id?: string
+          is_published?: boolean
+          percentage?: number
+          score?: number
+          student_id?: string
+          total_questions?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "scores_exam_id_fkey"
+            columns: ["exam_id"]
+            isOneToOne: false
+            referencedRelation: "exams"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "scores_student_id_fkey"
+            columns: ["student_id"]
+            isOneToOne: false
+            referencedRelation: "students"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      students: {
+        Row: {
+          category: string
+          class: string
+          created_at: string
+          exam_code: string
+          id: string
+          is_submitted: boolean
+          name: string
+          started_at: string | null
+          violations: number
+        }
+        Insert: {
+          category: string
+          class: string
+          created_at?: string
+          exam_code: string
+          id?: string
+          is_submitted?: boolean
+          name: string
+          started_at?: string | null
+          violations?: number
+        }
+        Update: {
+          category?: string
+          class?: string
+          created_at?: string
+          exam_code?: string
+          id?: string
+          is_submitted?: boolean
+          name?: string
+          started_at?: string | null
+          violations?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

@@ -17,8 +17,9 @@ export const ScoreViewer = () => {
         .select(`
           *,
           students (name, class),
-          exams (category)
+          exams!inner (category)
         `)
+        .eq('exams.category', category)
         .order('percentage', { ascending: false });
       
       if (error) throw error;
@@ -30,10 +31,20 @@ export const ScoreViewer = () => {
 
   const publishScores = async () => {
     try {
+      // Get exam IDs for the selected category first
+      const { data: examData, error: examError } = await supabase
+        .from('exams')
+        .select('id')
+        .eq('category', category);
+      
+      if (examError) throw examError;
+      
+      const examIds = examData?.map(exam => exam.id) || [];
+      
       const { error } = await supabase
         .from('scores')
         .update({ is_published: true })
-        .eq('exams.category', category);
+        .in('exam_id', examIds);
       
       if (error) throw error;
       
@@ -53,7 +64,7 @@ export const ScoreViewer = () => {
 
   useEffect(() => {
     loadScores();
-  }, []);
+  }, [category]);
 
   return (
     <div className="space-y-6">

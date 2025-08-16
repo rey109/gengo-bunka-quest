@@ -37,7 +37,7 @@ const AdminDashboard = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-subtle">
+    <div className="min-h-screen bg-gradient-subtle animate-page-enter">
       {/* Header */}
       <header className="bg-card shadow-soft border-b">
         <div className="container mx-auto px-6 py-6 flex justify-between items-center">

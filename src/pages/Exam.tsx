@@ -270,7 +270,7 @@ const Exam = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-subtle flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-subtle flex items-center justify-center animate-page-enter">
         <Card className="p-8">
           <CardContent className="text-center">
             <p className="text-lg">Memuat ujian...</p>
@@ -282,7 +282,7 @@ const Exam = () => {
 
   if (!isFullscreen) {
     return (
-      <div className="min-h-screen bg-gradient-subtle flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gradient-subtle flex items-center justify-center p-4 animate-page-enter">
         <Card className="w-full max-w-md shadow-elegant">
           <CardHeader>
             <CardTitle className="text-center">Siap Memulai Ujian?</CardTitle>

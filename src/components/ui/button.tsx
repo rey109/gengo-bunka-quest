@@ -18,8 +18,8 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-soft",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        // Japanese-inspired category buttons
-        category: "bg-gradient-primary text-primary-foreground hover:shadow-elegant transform hover:-translate-y-1 shadow-soft border-0 font-semibold tracking-wide",
+        // Modern Japanese card-style buttons
+        category: "bg-card text-card-foreground border border-border hover:border-primary/20 hover:shadow-elegant transform hover:-translate-y-2 hover:scale-105 shadow-soft font-medium tracking-wide transition-all duration-300 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-red-soft before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300",
         success: "bg-gradient-success text-success-foreground hover:shadow-glow transform hover:scale-105 shadow-soft",
         warning: "bg-warning text-warning-foreground hover:bg-warning/90 shadow-soft",
         // Exam-specific variants

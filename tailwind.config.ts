@@ -75,7 +75,12 @@ export default {
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
 				'gradient-subtle': 'var(--gradient-subtle)',
-				'gradient-success': 'var(--gradient-success)'
+				'gradient-success': 'var(--gradient-success)',
+				'gradient-red-soft': 'var(--gradient-red-soft)'
+			},
+			fontFamily: {
+				'noto': ['Noto Sans JP', 'sans-serif'],
+				'poppins': ['Poppins', 'sans-serif'],
 			},
 			boxShadow: {
 				'elegant': 'var(--shadow-elegant)',

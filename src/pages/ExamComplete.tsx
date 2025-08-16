@@ -24,11 +24,11 @@ const ExamComplete = () => {
           </div>
 
           {/* Success Message */}
-          <div className="space-y-2">
-            <h1 className="text-2xl font-bold text-foreground">
+          <div className="space-y-3">
+            <h1 className="text-3xl font-bold text-foreground font-noto">
               Sudah terkirim
             </h1>
-            <p className="text-muted-foreground">
+            <p className="text-lg text-muted-foreground font-poppins">
               Terima kasih sudah mengerjakan
             </p>
           </div>

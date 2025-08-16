@@ -19,38 +19,48 @@ const Index = () => {
       </div>
 
       {/* Main Heading */}
-      <div className="text-center mb-12 animate-in slide-in-from-bottom-4 duration-700 delay-200">
-        <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4 tracking-tight">
+      <div className="text-center mb-16 animate-in slide-in-from-bottom-4 duration-700 delay-200">
+        <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 tracking-tight font-noto">
           Sudah siap untuk tes??
         </h1>
-        <p className="text-lg text-muted-foreground max-w-md">
+        <p className="text-xl text-muted-foreground max-w-md font-poppins font-light">
           Pilih kategori ujian dan mulai perjalanan belajar Anda
         </p>
       </div>
 
       {/* Category Selection */}
-      <div className="grid md:grid-cols-2 gap-6 w-full max-w-2xl animate-in slide-in-from-bottom-4 duration-700 delay-400">
-        <Card className="p-6 hover-lift cursor-pointer group" onClick={() => navigate('/exam-info/Gengo')}>
-          <div className="text-center space-y-4">
-            <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
-              <BookOpen className="w-8 h-8 text-primary-foreground" />
+      <div className="grid md:grid-cols-2 gap-8 w-full max-w-4xl animate-in slide-in-from-bottom-4 duration-700 delay-400">
+        <Card className="p-8 cursor-pointer group relative overflow-hidden bg-card border border-border hover:border-primary/30 transition-all duration-500 hover:shadow-xl" onClick={() => navigate('/exam-info/Gengo')}>
+          {/* Japanese circle accent */}
+          <div className="absolute top-4 right-4 w-12 h-12 bg-primary/10 rounded-full"></div>
+          <div className="text-center space-y-6 relative z-10">
+            <div className="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-500 shadow-lg">
+              <BookOpen className="w-10 h-10 text-primary-foreground" />
             </div>
-            <h2 className="text-2xl font-semibold text-foreground">Gengo</h2>
-            <p className="text-muted-foreground">Test kemampuan bahasa Jepang Anda</p>
-            <Button variant="category" size="category" className="w-full">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-bold text-foreground font-noto">言語</h2>
+              <h3 className="text-xl font-medium text-foreground font-poppins">Gengo</h3>
+              <p className="text-muted-foreground font-poppins">Test kemampuan bahasa Jepang Anda</p>
+            </div>
+            <Button variant="category" size="category" className="w-full font-poppins font-medium">
               Pilih Gengo
             </Button>
           </div>
         </Card>
 
-        <Card className="p-6 hover-lift cursor-pointer group" onClick={() => navigate('/exam-info/Bunka')}>
-          <div className="text-center space-y-4">
-            <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
-              <Globe className="w-8 h-8 text-primary-foreground" />
+        <Card className="p-8 cursor-pointer group relative overflow-hidden bg-card border border-border hover:border-primary/30 transition-all duration-500 hover:shadow-xl" onClick={() => navigate('/exam-info/Bunka')}>
+          {/* Japanese circle accent */}
+          <div className="absolute top-4 right-4 w-12 h-12 bg-primary/10 rounded-full"></div>
+          <div className="text-center space-y-6 relative z-10">
+            <div className="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-500 shadow-lg">
+              <Globe className="w-10 h-10 text-primary-foreground" />
             </div>
-            <h2 className="text-2xl font-semibold text-foreground">Bunka</h2>
-            <p className="text-muted-foreground">Test pengetahuan budaya Jepang Anda</p>
-            <Button variant="category" size="category" className="w-full">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-bold text-foreground font-noto">文化</h2>
+              <h3 className="text-xl font-medium text-foreground font-poppins">Bunka</h3>
+              <p className="text-muted-foreground font-poppins">Test pengetahuan budaya Jepang Anda</p>
+            </div>
+            <Button variant="category" size="category" className="w-full font-poppins font-medium">
               Pilih Bunka
             </Button>
           </div>
